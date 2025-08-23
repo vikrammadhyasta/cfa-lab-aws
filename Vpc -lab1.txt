@@ -1,0 +1,899 @@
+msis@master:~$ ls
+1                       LICENSE.txt
+app.js                  LinuxCommnadsScriptsUtilitiesServices
+assets                  msis
+bankingapp              Music
+Cafe_Dynamic_Website    mywebsite
+cafe-static-website     Nginx_Apache2_Reverse_Proxy_Ecommerce-App
+CafeStaticWebsite       node-v18.18.0-linux-x64.tar.xz
+cdc                     Pictures
+cdcapp                  Public
+data_analysis           README.txt
+Desktop                 sample1
+Documents               sample1.zip
+Downloads               snap
+ES_251100620018_ACA     students.csv
+home                    Templates
+html5up-multiverse.zip  Videos
+images                  weather-app
+index.html
+msis@master:~$ cd D
+Desktop/   Documents/ Downloads/ 
+msis@master:~$ cd Downloads/
+msis@master:~/Downloads$ ls
+ 7_day_python_course_minitasks.docx       main.c
+ array_dy_op.c                            numpy_exercises.ipynb
+'ch04(1).ipynb'                           Pandas_2025_26_AIML_BDA.ipynb
+ ch04.ipynb                              'Samples_1(1).docx'
+ data.csv                                 Samples_1.docx
+ Financial_Analysis_Course_Week_1.ipynb   Samples_2.docx
+ html5up-lens.zip                         Samples_3.docx
+ html5up-massively.zip                    thunderbird.tmp
+ html5up-multiverse                      'unnamed(1).png'
+ html5up-multiverse.zip                  'unnamed(2).png'
+ html5up-stellar.zip                      unnamed.png
+ labsuser.pem
+msis@master:~/Downloads$ ls
+ 7_day_python_course_minitasks.docx       main.c
+ array_dy_op.c                            numpy_exercises.ipynb
+'ch04(1).ipynb'                           Pandas_2025_26_AIML_BDA.ipynb
+ ch04.ipynb                              'Samples_1(1).docx'
+ data.csv                                 Samples_1.docx
+ Financial_Analysis_Course_Week_1.ipynb   Samples_2.docx
+ html5up-lens.zip                         Samples_3.docx
+ html5up-massively.zip                    thunderbird.tmp
+ html5up-multiverse                      'unnamed(1).png'
+ html5up-multiverse.zip                  'unnamed(2).png'
+ html5up-stellar.zip                      unnamed.png
+ labsuser.pem
+msis@master:~/Downloads$ sudo chmod 600 labsuser.pem
+[sudo] password for msis: 
+msis@master:~/Downloads$ ssh -i labsuser.pem ubuntu@34.207.136.116
+The authenticity of host '34.207.136.116 (34.207.136.116)' can't be established.
+ED25519 key fingerprint is SHA256:LU158PhZHoKbOvbRjG5q2LXMVqxb4rJtX2JtcGzJchM.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '34.207.136.116' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1011-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Aug 23 05:42:05 UTC 2025
+
+  System load:  0.08              Processes:             107
+  Usage of /:   25.6% of 6.71GB   Users logged in:       0
+  Memory usage: 20%               IPv4 address for enX0: 10.0.0.196
+  Swap usage:   0%
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-10-0-0-196:~$ exit
+logout
+Connection to 34.207.136.116 closed.
+msis@master:~/Downloads$ ls
+ 7_day_python_course_minitasks.docx       main.c
+ array_dy_op.c                            numpy_exercises.ipynb
+'ch04(1).ipynb'                           Pandas_2025_26_AIML_BDA.ipynb
+ ch04.ipynb                              'Samples_1(1).docx'
+ data.csv                                 Samples_1.docx
+ Financial_Analysis_Course_Week_1.ipynb   Samples_2.docx
+ html5up-lens.zip                         Samples_3.docx
+ html5up-massively.zip                    thunderbird.tmp
+ html5up-multiverse                      'unnamed(1).png'
+ html5up-multiverse.zip                  'unnamed(2).png'
+ html5up-stellar.zip                      unnamed.png
+ labsuser.pem
+msis@master:~/Downloads$ sudo scp -i labsuser.pem labsuser.pem ubuntu@34.207.136.116:/home/ubuntu
+The authenticity of host '34.207.136.116 (34.207.136.116)' can't be established.
+ED25519 key fingerprint is SHA256:LU158PhZHoKbOvbRjG5q2LXMVqxb4rJtX2JtcGzJchM.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '34.207.136.116' (ED25519) to the list of known hosts.
+labsuser.pem                                  100% 1674     7.1KB/s   00:00    
+msis@master:~/Downloads$ ssh -i labsuser.pem ubuntu@34.207.136.116
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1011-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Aug 23 05:47:40 UTC 2025
+
+  System load:  0.0               Processes:             108
+  Usage of /:   26.0% of 6.71GB   Users logged in:       0
+  Memory usage: 21%               IPv4 address for enX0: 10.0.0.196
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sat Aug 23 05:42:06 2025 from 45.112.150.2
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-10-0-0-196:~$ ls
+labsuser.pem
+ubuntu@ip-10-0-0-196:~$ sudo apt-get install apache2 libapache2-mod-php php php-mysql mysql-client
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils libapache2-mod-php8.3 libapr1t64
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64 liblua5.4-0
+  mysql-client-8.0 mysql-client-core-8.0 mysql-common php-common php8.3
+  php8.3-cli php8.3-common php8.3-mysql php8.3-opcache php8.3-readline
+  ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser
+  php-pear
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils libapache2-mod-php
+  libapache2-mod-php8.3 libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap
+  libaprutil1t64 liblua5.4-0 mysql-client mysql-client-8.0
+  mysql-client-core-8.0 mysql-common php php-common php-mysql php8.3
+  php8.3-cli php8.3-common php8.3-mysql php8.3-opcache php8.3-readline
+  ssl-cert
+0 upgraded, 25 newly installed, 0 to remove and 0 not upgraded.
+Need to get 9915 kB of archives.
+After this operation, 92.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 libapr1t64 amd64 1.7.2-3.1ubuntu0.1 [108 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1t64 amd64 1.6.3-1.1ubuntu7 [91.9 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.3-1.1ubuntu7 [11.2 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1-ldap amd64 1.6.3-1.1ubuntu7 [9116 B]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 liblua5.4-0 amd64 5.4.6-3build2 [166 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-bin amd64 2.4.58-1ubuntu8.8 [1331 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-data all 2.4.58-1ubuntu8.8 [163 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-utils amd64 2.4.58-1ubuntu8.8 [97.7 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2 amd64 2.4.58-1ubuntu8.8 [90.2 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 php-common all 2:93ubuntu2 [13.9 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 php8.3-common amd64 8.3.6-0ubuntu0.24.04.5 [740 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 php8.3-opcache amd64 8.3.6-0ubuntu0.24.04.5 [371 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 php8.3-readline amd64 8.3.6-0ubuntu0.24.04.5 [13.5 kB]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 php8.3-cli amd64 8.3.6-0ubuntu0.24.04.5 [1915 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 libapache2-mod-php8.3 amd64 8.3.6-0ubuntu0.24.04.5 [1851 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libapache2-mod-php all 2:8.3+93ubuntu2 [4224 B]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-client-core-8.0 amd64 8.0.43-0ubuntu0.24.04.1 [2740 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 mysql-common all 5.8+1.1.0build1 [6746 B]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-client-8.0 amd64 8.0.43-0ubuntu0.24.04.1 [22.4 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-client all 8.0.43-0ubuntu0.24.04.1 [9412 B]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 php8.3 all 8.3.6-0ubuntu0.24.04.5 [9174 B]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 php all 2:8.3+93ubuntu2 [4076 B]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 php8.3-mysql amd64 8.3.6-0ubuntu0.24.04.5 [127 kB]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 php-mysql all 2:8.3+93ubuntu2 [1838 B]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 ssl-cert all 1.1.2ubuntu1 [17.8 kB]
+Fetched 9915 kB in 0s (59.1 MB/s)     
+Preconfiguring packages ...
+Selecting previously unselected package libapr1t64:amd64.
+(Reading database ... 71718 files and directories currently installed.)
+Preparing to unpack .../00-libapr1t64_1.7.2-3.1ubuntu0.1_amd64.deb ...
+Unpacking libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+Selecting previously unselected package libaprutil1t64:amd64.
+Preparing to unpack .../01-libaprutil1t64_1.6.3-1.1ubuntu7_amd64.deb ...
+Unpacking libaprutil1t64:amd64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.3-1.1ubuntu7_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../03-libaprutil1-ldap_1.6.3-1.1ubuntu7_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package liblua5.4-0:amd64.
+Preparing to unpack .../04-liblua5.4-0_5.4.6-3build2_amd64.deb ...
+Unpacking liblua5.4-0:amd64 (5.4.6-3build2) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../05-apache2-bin_2.4.58-1ubuntu8.8_amd64.deb ...
+Unpacking apache2-bin (2.4.58-1ubuntu8.8) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../06-apache2-data_2.4.58-1ubuntu8.8_all.deb ...
+Unpacking apache2-data (2.4.58-1ubuntu8.8) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../07-apache2-utils_2.4.58-1ubuntu8.8_amd64.deb ...
+Unpacking apache2-utils (2.4.58-1ubuntu8.8) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../08-apache2_2.4.58-1ubuntu8.8_amd64.deb ...
+Unpacking apache2 (2.4.58-1ubuntu8.8) ...
+Selecting previously unselected package php-common.
+Preparing to unpack .../09-php-common_2%3a93ubuntu2_all.deb ...
+Unpacking php-common (2:93ubuntu2) ...
+Selecting previously unselected package php8.3-common.
+Preparing to unpack .../10-php8.3-common_8.3.6-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking php8.3-common (8.3.6-0ubuntu0.24.04.5) ...
+Selecting previously unselected package php8.3-opcache.
+Preparing to unpack .../11-php8.3-opcache_8.3.6-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking php8.3-opcache (8.3.6-0ubuntu0.24.04.5) ...
+Selecting previously unselected package php8.3-readline.
+Preparing to unpack .../12-php8.3-readline_8.3.6-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking php8.3-readline (8.3.6-0ubuntu0.24.04.5) ...
+Selecting previously unselected package php8.3-cli.
+Preparing to unpack .../13-php8.3-cli_8.3.6-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking php8.3-cli (8.3.6-0ubuntu0.24.04.5) ...
+Selecting previously unselected package libapache2-mod-php8.3.
+Preparing to unpack .../14-libapache2-mod-php8.3_8.3.6-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking libapache2-mod-php8.3 (8.3.6-0ubuntu0.24.04.5) ...
+Selecting previously unselected package libapache2-mod-php.
+Preparing to unpack .../15-libapache2-mod-php_2%3a8.3+93ubuntu2_all.deb ...
+Unpacking libapache2-mod-php (2:8.3+93ubuntu2) ...
+Selecting previously unselected package mysql-client-core-8.0.
+Preparing to unpack .../16-mysql-client-core-8.0_8.0.43-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-client-core-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Selecting previously unselected package mysql-common.
+Preparing to unpack .../17-mysql-common_5.8+1.1.0build1_all.deb ...
+Unpacking mysql-common (5.8+1.1.0build1) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../18-mysql-client-8.0_8.0.43-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-client-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Selecting previously unselected package mysql-client.
+Preparing to unpack .../19-mysql-client_8.0.43-0ubuntu0.24.04.1_all.deb ...
+Unpacking mysql-client (8.0.43-0ubuntu0.24.04.1) ...
+Selecting previously unselected package php8.3.
+Preparing to unpack .../20-php8.3_8.3.6-0ubuntu0.24.04.5_all.deb ...
+Unpacking php8.3 (8.3.6-0ubuntu0.24.04.5) ...
+Selecting previously unselected package php.
+Preparing to unpack .../21-php_2%3a8.3+93ubuntu2_all.deb ...
+Unpacking php (2:8.3+93ubuntu2) ...
+Selecting previously unselected package php8.3-mysql.
+Preparing to unpack .../22-php8.3-mysql_8.3.6-0ubuntu0.24.04.5_amd64.deb ...
+Unpacking php8.3-mysql (8.3.6-0ubuntu0.24.04.5) ...
+Selecting previously unselected package php-mysql.
+Preparing to unpack .../23-php-mysql_2%3a8.3+93ubuntu2_all.deb ...
+Unpacking php-mysql (2:8.3+93ubuntu2) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../24-ssl-cert_1.1.2ubuntu1_all.deb ...
+Unpacking ssl-cert (1.1.2ubuntu1) ...
+Setting up php-common (2:93ubuntu2) ...
+Created symlink /etc/systemd/system/timers.target.wants/phpsessionclean.timer → /usr/lib/systemd/system/phpsessionclean.timer.
+Setting up mysql-common (5.8+1.1.0build1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up mysql-client-core-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Setting up php8.3-common (8.3.6-0ubuntu0.24.04.5) ...
+
+Creating config file /etc/php/8.3/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/exif.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/fileinfo.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/ffi.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/ftp.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/gettext.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/iconv.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/pdo.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/phar.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/posix.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/shmop.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/sockets.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/sysvmsg.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/sysvsem.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/sysvshm.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/tokenizer.ini with new version
+Setting up php8.3-mysql (8.3.6-0ubuntu0.24.04.5) ...
+
+Creating config file /etc/php/8.3/mods-available/mysqlnd.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/mysqli.ini with new version
+
+Creating config file /etc/php/8.3/mods-available/pdo_mysql.ini with new version
+Setting up php8.3-readline (8.3.6-0ubuntu0.24.04.5) ...
+
+Creating config file /etc/php/8.3/mods-available/readline.ini with new version
+Setting up ssl-cert (1.1.2ubuntu1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ssl-cert.service → /usr/lib/systemd/system/ssl-cert.service.
+Setting up libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+Setting up mysql-client-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Setting up liblua5.4-0:amd64 (5.4.6-3build2) ...
+Setting up apache2-data (2.4.58-1ubuntu8.8) ...
+Setting up php8.3-opcache (8.3.6-0ubuntu0.24.04.5) ...
+
+Creating config file /etc/php/8.3/mods-available/opcache.ini with new version
+Setting up libaprutil1t64:amd64 (1.6.3-1.1ubuntu7) ...
+Setting up mysql-client (8.0.43-0ubuntu0.24.04.1) ...
+Setting up php-mysql (2:8.3+93ubuntu2) ...
+Setting up libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7) ...
+Setting up php8.3-cli (8.3.6-0ubuntu0.24.04.5) ...
+update-alternatives: using /usr/bin/php8.3 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar8.3 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar8.3 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+Creating config file /etc/php/8.3/cli/php.ini with new version
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7) ...
+Setting up apache2-utils (2.4.58-1ubuntu8.8) ...
+Setting up apache2-bin (2.4.58-1ubuntu8.8) ...
+Setting up libapache2-mod-php8.3 (8.3.6-0ubuntu0.24.04.5) ...
+Package apache2 is not configured yet. Will defer actions by package libapache2-mod-php8.3.
+
+Creating config file /etc/php/8.3/apache2/php.ini with new version
+No module matches 
+Setting up apache2 (2.4.58-1ubuntu8.8) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+info: Switch to mpm prefork for package libapache2-mod-php8.3
+Module mpm_event disabled.
+Enabling module mpm_prefork.
+info: Executing deferred 'a2enmod php8.3' for package libapache2-mod-php8.3
+Enabling module php8.3.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /usr/lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /usr/lib/systemd/system/apache-htcacheclean.service.
+Setting up php8.3 (8.3.6-0ubuntu0.24.04.5) ...
+Setting up libapache2-mod-php (2:8.3+93ubuntu2) ...
+Setting up php (2:8.3+93ubuntu2) ...
+Processing triggers for ufw (0.36.2-6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.5) ...
+Processing triggers for php8.3-cli (8.3.6-0ubuntu0.24.04.5) ...
+Processing triggers for libapache2-mod-php8.3 (8.3.6-0ubuntu0.24.04.5) ...
+Scanning processes...                                                           
+Scanning linux images...                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@ip-10-0-0-196:~$ git clone https://github.com/sreepathysois/Cafe_Dynamic_Website.git 
+Cloning into 'Cafe_Dynamic_Website'...
+remote: Enumerating objects: 1454, done.
+remote: Counting objects: 100% (179/179), done.
+remote: Compressing objects: 100% (96/96), done.
+remote: Total 1454 (delta 145), reused 83 (delta 83), pack-reused 1275 (from 3)
+Receiving objects: 100% (1454/1454), 44.29 MiB | 45.17 MiB/s, done.
+Resolving deltas: 100% (863/863), done.
+ubuntu@ip-10-0-0-196:~$ cd Cafe_Dynamic_Website/
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website$ ls
+Deploy  GitOps  README.md  docker-compose.yml  mompopcafe  mompopdb  test
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website$ cd mompocafe
+-bash: cd: mompocafe: No such file or directory
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website$ ls
+Deploy  GitOps  README.md  docker-compose.yml  mompopcafe  mompopdb  test
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website$ cd mompopcafe/
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopcafe$ ls
+AWSSDK      css                   images     menu.php          processOrder.php
+Dockerfile  getAppParameters.php  index.php  orderHistory.php  serverInfo.php
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopcafe$ sudo cp -rf * /var/www/html/.
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopcafe$ sudo rm -rf /var/www/html/index.html
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopcafe$ sudo systemctl restart apache2
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopcafe$ cd ..
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website$ cd ..
+ubuntu@ip-10-0-0-196:~$ sudo chmod 600 labuser.pem
+chmod: cannot access 'labuser.pem': No such file or directory
+ubuntu@ip-10-0-0-196:~$ sudo chmod 600 labsuser.pem
+ubuntu@ip-10-0-0-196:~$ sudo ssh -i labsuser ubuntu@10.0.1.16
+Warning: Identity file labsuser not accessible: No such file or directory.
+The authenticity of host '10.0.1.16 (10.0.1.16)' can't be established.
+ED25519 key fingerprint is SHA256:wX8+r3xrsBA3CfhBFghahNiMZrdth4UT8vDUJ+xSq4k.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.0.1.16' (ED25519) to the list of known hosts.
+ubuntu@10.0.1.16: Permission denied (publickey).
+ubuntu@ip-10-0-0-196:~$ ssh -i labsuser ubuntu@10.0.1.16
+Warning: Identity file labsuser not accessible: No such file or directory.
+The authenticity of host '10.0.1.16 (10.0.1.16)' can't be established.
+ED25519 key fingerprint is SHA256:wX8+r3xrsBA3CfhBFghahNiMZrdth4UT8vDUJ+xSq4k.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.0.1.16' (ED25519) to the list of known hosts.
+ubuntu@10.0.1.16: Permission denied (publickey).
+ubuntu@ip-10-0-0-196:~$ ssh -i labsuser.pem ubuntu@10.0.1.16
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1011-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Aug 23 05:59:19 UTC 2025
+
+  System load:  0.0               Processes:             107
+  Usage of /:   25.6% of 6.71GB   Users logged in:       0
+  Memory usage: 21%               IPv4 address for enX0: 10.0.1.16
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-10-0-1-16:~$ sudo apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe Translation-en [5982 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 Components [3871 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1083 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 c-n-f Metadata [301 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [269 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse Translation-en [118 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [35.0 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 c-n-f Metadata [8328 B]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1352 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [269 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [175 kB]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1123 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [288 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [377 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [26.0 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1731 kB]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [384 kB]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [33.2 kB]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [6772 B]
+Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [592 B]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [39.9 kB]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main Translation-en [9152 B]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7084 B]
+Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [272 B]
+Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [30.2 kB]
+Get:33 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [17.4 kB]
+Get:34 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [19.2 kB]
+Get:35 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1304 B]
+Get:36 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [212 B]
+Get:37 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:38 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Get:39 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 c-n-f Metadata [116 B]
+Get:40 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]
+Get:41 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [881 kB]
+Get:42 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [195 kB]
+Get:43 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.2 kB]
+Get:44 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [17.0 kB]
+Get:45 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:46 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [18.5 kB]
+Get:47 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [4288 B]
+Get:48 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Get:49 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [380 B]
+Fetched 34.2 MB in 7s (5104 kB/s)                                              
+Reading package lists... Done
+ubuntu@ip-10-0-1-16:~$ sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libcgi-fast-perl libcgi-pm-perl libclone-perl libencode-locale-perl
+  libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+  libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl
+  libhttp-date-perl libhttp-message-perl libio-html-perl
+  liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64 libtimedate-perl
+  liburi-perl mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client-8.0
+  mysql-client-core-8.0 mysql-common mysql-server-8.0 mysql-server-core-8.0
+Suggested packages:
+  libdata-dump-perl libipc-sharedcache-perl libio-compress-brotli-perl
+  libbusiness-isbn-perl libregexp-ipv6-perl libwww-perl mailx tinyca
+The following NEW packages will be installed:
+  libcgi-fast-perl libcgi-pm-perl libclone-perl libencode-locale-perl
+  libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl libfcgi0t64
+  libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl
+  libhttp-date-perl libhttp-message-perl libio-html-perl
+  liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64 libtimedate-perl
+  liburi-perl mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client-8.0
+  mysql-client-core-8.0 mysql-common mysql-server mysql-server-8.0
+  mysql-server-core-8.0
+0 upgraded, 28 newly installed, 0 to remove and 5 not upgraded.
+Need to get 29.6 MB of archives.
+After this operation, 243 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 mysql-common all 5.8+1.1.0build1 [6746 B]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-client-core-8.0 amd64 8.0.43-0ubuntu0.24.04.1 [2740 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-client-8.0 amd64 8.0.43-0ubuntu0.24.04.1 [22.4 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libevent-pthreads-2.1-7t64 amd64 2.1.12-stable-9ubuntu2 [7982 B]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libmecab2 amd64 0.996-14ubuntu4 [201 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 libprotobuf-lite32t64 amd64 3.21.12-8.2ubuntu0.2 [238 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-server-core-8.0 amd64 8.0.43-0ubuntu0.24.04.1 [17.5 MB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-server-8.0 amd64 8.0.43-0ubuntu0.24.04.1 [1439 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libhtml-tagset-perl all 3.20-6 [11.3 kB]
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 liburi-perl all 5.27-1 [88.0 kB]
+Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libhtml-parser-perl amd64 3.81-1build3 [85.8 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libcgi-pm-perl all 4.63-1 [185 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 libfcgi0t64 amd64 2.4.2-2.1ubuntu0.24.04.1 [27.0 kB]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libfcgi-perl amd64 0.82+ds-3build2 [21.7 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libcgi-fast-perl all 1:2.17-1 [10.3 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libclone-perl amd64 0.46-1build3 [10.7 kB]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libencode-locale-perl all 1.05-3 [11.6 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 libfcgi-bin amd64 2.4.2-2.1ubuntu0.24.04.1 [11.2 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libhtml-template-perl all 2.97-2 [60.2 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libtimedate-perl all 2.3300-2 [34.0 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libhttp-date-perl all 6.06-1 [10.2 kB]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libio-html-perl all 1.004-3 [15.9 kB]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 liblwp-mediatypes-perl all 6.04-2 [20.1 kB]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 libhttp-message-perl all 6.45-1ubuntu1 [78.2 kB]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 mecab-utils amd64 0.996-14ubuntu4 [4804 B]
+Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6718 kB]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4384 B]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-server all 8.0.43-0ubuntu0.24.04.1 [9520 B]
+Fetched 29.6 MB in 0s (64.8 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package mysql-common.
+(Reading database ... 71718 files and directories currently installed.)
+Preparing to unpack .../0-mysql-common_5.8+1.1.0build1_all.deb ...
+Unpacking mysql-common (5.8+1.1.0build1) ...
+Selecting previously unselected package mysql-client-core-8.0.
+Preparing to unpack .../1-mysql-client-core-8.0_8.0.43-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-client-core-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../2-mysql-client-8.0_8.0.43-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-client-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Selecting previously unselected package libevent-pthreads-2.1-7t64:amd64.
+Preparing to unpack .../3-libevent-pthreads-2.1-7t64_2.1.12-stable-9ubuntu2_amd64.deb ...
+Unpacking libevent-pthreads-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) ...
+Selecting previously unselected package libmecab2:amd64.
+Preparing to unpack .../4-libmecab2_0.996-14ubuntu4_amd64.deb ...
+Unpacking libmecab2:amd64 (0.996-14ubuntu4) ...
+Selecting previously unselected package libprotobuf-lite32t64:amd64.
+Preparing to unpack .../5-libprotobuf-lite32t64_3.21.12-8.2ubuntu0.2_amd64.deb ...
+Unpacking libprotobuf-lite32t64:amd64 (3.21.12-8.2ubuntu0.2) ...
+Selecting previously unselected package mysql-server-core-8.0.
+Preparing to unpack .../6-mysql-server-core-8.0_8.0.43-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-server-core-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Setting up mysql-common (5.8+1.1.0build1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Selecting previously unselected package mysql-server-8.0.
+(Reading database ... 71937 files and directories currently installed.)
+Preparing to unpack .../00-mysql-server-8.0_8.0.43-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking mysql-server-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Selecting previously unselected package libhtml-tagset-perl.
+Preparing to unpack .../01-libhtml-tagset-perl_3.20-6_all.deb ...
+Unpacking libhtml-tagset-perl (3.20-6) ...
+Selecting previously unselected package liburi-perl.
+Preparing to unpack .../02-liburi-perl_5.27-1_all.deb ...
+Unpacking liburi-perl (5.27-1) ...
+Selecting previously unselected package libhtml-parser-perl:amd64.
+Preparing to unpack .../03-libhtml-parser-perl_3.81-1build3_amd64.deb ...
+Unpacking libhtml-parser-perl:amd64 (3.81-1build3) ...
+Selecting previously unselected package libcgi-pm-perl.
+Preparing to unpack .../04-libcgi-pm-perl_4.63-1_all.deb ...
+Unpacking libcgi-pm-perl (4.63-1) ...
+Selecting previously unselected package libfcgi0t64:amd64.
+Preparing to unpack .../05-libfcgi0t64_2.4.2-2.1ubuntu0.24.04.1_amd64.deb ...
+Unpacking libfcgi0t64:amd64 (2.4.2-2.1ubuntu0.24.04.1) ...
+Selecting previously unselected package libfcgi-perl.
+Preparing to unpack .../06-libfcgi-perl_0.82+ds-3build2_amd64.deb ...
+Unpacking libfcgi-perl (0.82+ds-3build2) ...
+Selecting previously unselected package libcgi-fast-perl.
+Preparing to unpack .../07-libcgi-fast-perl_1%3a2.17-1_all.deb ...
+Unpacking libcgi-fast-perl (1:2.17-1) ...
+Selecting previously unselected package libclone-perl:amd64.
+Preparing to unpack .../08-libclone-perl_0.46-1build3_amd64.deb ...
+Unpacking libclone-perl:amd64 (0.46-1build3) ...
+Selecting previously unselected package libencode-locale-perl.
+Preparing to unpack .../09-libencode-locale-perl_1.05-3_all.deb ...
+Unpacking libencode-locale-perl (1.05-3) ...
+Selecting previously unselected package libfcgi-bin.
+Preparing to unpack .../10-libfcgi-bin_2.4.2-2.1ubuntu0.24.04.1_amd64.deb ...
+Unpacking libfcgi-bin (2.4.2-2.1ubuntu0.24.04.1) ...
+Selecting previously unselected package libhtml-template-perl.
+Preparing to unpack .../11-libhtml-template-perl_2.97-2_all.deb ...
+Unpacking libhtml-template-perl (2.97-2) ...
+Selecting previously unselected package libtimedate-perl.
+Preparing to unpack .../12-libtimedate-perl_2.3300-2_all.deb ...
+Unpacking libtimedate-perl (2.3300-2) ...
+Selecting previously unselected package libhttp-date-perl.
+Preparing to unpack .../13-libhttp-date-perl_6.06-1_all.deb ...
+Unpacking libhttp-date-perl (6.06-1) ...
+Selecting previously unselected package libio-html-perl.
+Preparing to unpack .../14-libio-html-perl_1.004-3_all.deb ...
+Unpacking libio-html-perl (1.004-3) ...
+Selecting previously unselected package liblwp-mediatypes-perl.
+Preparing to unpack .../15-liblwp-mediatypes-perl_6.04-2_all.deb ...
+Unpacking liblwp-mediatypes-perl (6.04-2) ...
+Selecting previously unselected package libhttp-message-perl.
+Preparing to unpack .../16-libhttp-message-perl_6.45-1ubuntu1_all.deb ...
+Unpacking libhttp-message-perl (6.45-1ubuntu1) ...
+Selecting previously unselected package mecab-utils.
+Preparing to unpack .../17-mecab-utils_0.996-14ubuntu4_amd64.deb ...
+Unpacking mecab-utils (0.996-14ubuntu4) ...
+Selecting previously unselected package mecab-ipadic.
+Preparing to unpack .../18-mecab-ipadic_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mecab-ipadic-utf8.
+Preparing to unpack .../19-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb ...
+Unpacking mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../20-mysql-server_8.0.43-0ubuntu0.24.04.1_all.deb ...
+Unpacking mysql-server (8.0.43-0ubuntu0.24.04.1) ...
+Setting up libprotobuf-lite32t64:amd64 (3.21.12-8.2ubuntu0.2) ...
+Setting up libmecab2:amd64 (0.996-14ubuntu4) ...
+Setting up mysql-client-core-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Setting up libclone-perl:amd64 (0.46-1build3) ...
+Setting up libevent-pthreads-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) ...
+Setting up libfcgi0t64:amd64 (2.4.2-2.1ubuntu0.24.04.1) ...
+Setting up libhtml-tagset-perl (3.20-6) ...
+Setting up liblwp-mediatypes-perl (6.04-2) ...
+Setting up libfcgi-bin (2.4.2-2.1ubuntu0.24.04.1) ...
+Setting up libencode-locale-perl (1.05-3) ...
+Setting up mecab-utils (0.996-14ubuntu4) ...
+Setting up libio-html-perl (1.004-3) ...
+Setting up mysql-server-core-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Setting up libtimedate-perl (2.3300-2) ...
+Setting up mysql-client-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+Setting up libfcgi-perl (0.82+ds-3build2) ...
+Setting up liburi-perl (5.27-1) ...
+Setting up mysql-server-8.0 (8.0.43-0ubuntu0.24.04.1) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Renaming removed key_buffer and myisam-recover options (if present)
+mysqld will log errors to /var/log/mysql/error.log
+mysqld is running as pid 2063
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /usr/lib/systemd/system/mysql.service.
+Setting up libhttp-date-perl (6.06-1) ...
+Setting up mecab-ipadic (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up mecab-ipadic-utf8 (2.7.0-20070801+main-3) ...
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: using /var/lib/mecab/dic/ipadic-utf8 to provide /var/lib/mecab/dic/debian (mecab-dictionary) in auto mode
+Setting up libhtml-parser-perl:amd64 (3.81-1build3) ...
+Setting up libhttp-message-perl (6.45-1ubuntu1) ...
+Setting up mysql-server (8.0.43-0ubuntu0.24.04.1) ...
+Setting up libcgi-pm-perl (4.63-1) ...
+Setting up libhtml-template-perl (2.97-2) ...
+Setting up libcgi-fast-perl (1:2.17-1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.5) ...
+Scanning processes...                                                           
+Scanning linux images...                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@ip-10-0-1-16:~$ ls /etc/mysql
+conf.d        debian.cnf  my.cnf.fallback  mysql.conf.d
+debian-start  my.cnf      mysql.cnf
+ubuntu@ip-10-0-1-16:~$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf 
+ubuntu@ip-10-0-1-16:~$ sudo systemctl restart mysql
+ubuntu@ip-10-0-1-16:~$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.43-0ubuntu0.24.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> \c
+mysql> \c;
+ERROR: 
+No query specified
+
+mysql> create database cafedb;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> CREATE USER 'msis'@'%' IDENTIFIED WITH mysql_native_password BY 'msis@123';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> GRANT ALL PRIVILEGES ON cafedb.* TO 'msis'@'%' WITH GRANT OPTION
+    -> GRANT ALL PRIVILEGES ON cafedb.* TO 'msis'@'%' WITH GRANT OPTION;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GRANT ALL PRIVILEGES ON cafedb.* TO 'msis'@'%' WITH GRANT OPTION' at line 2
+mysql> GRANT ALL PRIVILEGES ON cafedb.* TO 'msis'@'%' WITH GRANT OPTION;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> exit
+Bye
+ubuntu@ip-10-0-1-16:~$ exit
+logout
+Connection to 10.0.1.16 closed.
+ubuntu@ip-10-0-0-196:~$ cd Cafe_Dynamic_Website/
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website$ ls
+Deploy  GitOps  README.md  docker-compose.yml  mompopcafe  mompopdb  test
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website$ cd mompopdb
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopdb$ ld
+Command 'ld' not found, but can be installed with:
+sudo apt install binutils
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopdb$ ls
+Dockerfile  create-db.sh  create-db.sql  set-root-password.sh  sql
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopdb$ sudo mysql -h 10.0.1.16 -u msis -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.43-0ubuntu0.24.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use cafedb;
+Database changed
+mysql> source create-db.sql;
+ERROR 1044 (42000): Access denied for user 'msis'@'%' to database 'mom_pop_db'
+ERROR 1044 (42000): Access denied for user 'msis'@'%' to database 'mom_pop_db'
+ERROR 1044 (42000): Access denied for user 'msis'@'%' to database 'mom_pop_db'
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 2 warnings (0.05 sec)
+
+Query OK, 9 rows affected (0.00 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+
+Query OK, 0 rows affected, 4 warnings (0.04 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_cafedb |
++------------------+
+| order            |
+| order_item       |
+| product          |
+| product_group    |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopdb$ sudo nano /var/www/html/getAppParameters.php
+ubuntu@ip-10-0-0-196:~/Cafe_Dynamic_Website/mompopdb$ sudo systemctl restart 
+Broadcast message from root@ip-10-0-0-196 (Sat 2025-08-23 06:15:05 UTC):
+
+The system will power off now!
+
+client_loop: send disconnect: Broken pipe
+msis@master:~/Downloads$ 
+
