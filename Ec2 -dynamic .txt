@@ -667,6 +667,6 @@ Dockerfile  images                orderHistory.php
 css         index.php             processOrder.php
 ubuntu@ip-10-0-1-8:/var/www/html$ sudo vi getAppParameters.php 
 ubuntu@ip-10-0-1-8:/var/www/html$ sudo rm -rf /var/www/html/index.html ^C
-ubuntu@ip-10-0-1-8:/var/www/html$ sudo vi getAppParameters.php 
+ubuntu@ip-10-0-1-8:/mompopcafe $ sudo vi getAppParameters.php 
 ubuntu@ip-10-0-1-8:/var/www/html$ sudo systemctl restart apache2
 
