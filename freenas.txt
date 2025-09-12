@@ -1,0 +1,81 @@
+msis@client1:~$ sudo mkdir /mnt/freenas
+[sudo] password for msis: 
+Sorry, try again.
+[sudo] password for msis: 
+msis@client1:~$ cd /mnt/freenas/
+msis@client1:/mnt/freenas$ ls
+msis@client1:/mnt/freenas$ sudo mount -t nfs -o vers=4 172.16.221.128:/mnt/msis /mnt/freenas
+msis@client1:/mnt/freenas$ df -h
+Filesystem                Size  Used Avail Use% Mounted on
+tmpfs                     1.6G  2.3M  1.6G   1% /run
+/dev/nvme0n1p2            937G   59G  831G   7% /
+tmpfs                     7.7G     0  7.7G   0% /dev/shm
+tmpfs                     5.0M  8.0K  5.0M   1% /run/lock
+efivarfs                  246K  162K   80K  68% /sys/firmware/efi/efivars
+/dev/nvme0n1p1            1.1G  6.2M  1.1G   1% /boot/efi
+tmpfs                     1.6G  144K  1.6G   1% /run/user/1000
+172.16.221.128:/mnt/msis   17G  128K   17G   1% /mnt/freenas
+msis@client1:/mnt/freenas$ ls
+msis@client1:/mnt/freenas$ ls
+msis@client1:/mnt/freenas$ sudo nano /etc/fstab
+msis@client1:/mnt/freenas$ mount | grep freenas
+172.16.221.128:/mnt/msis on /mnt/freenas type nfs4 (rw,relatime,vers=4.1,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=172.16.221.1,local_lock=none,addr=172.16.221.128)
+msis@client1:/mnt/freenas$ ls
+msis@client1:/mnt/freenas$ cd /mnt/freenas
+msis@client1:/mnt/freenas$ ls
+ls: reading directory '.': Input/output error
+msis@client1:/mnt/freenas$ ls
+ls: reading directory '.': Input/output error
+msis@client1:/mnt/freenas$ sudo mount -a
+mount: nfs: mount point does not exist.
+       dmesg(1) may have more information after failed mount system call.
+mount: (hint) your fstab has been modified, but systemd still uses
+       the old version; use 'systemctl daemon-reload' to reload.
+msis@client1:/mnt/freenas$ systemctl daemon-reload
+msis@client1:/mnt/freenas$ sudo mount -t nfs -o vers=4 172.16.221.128:/mnt/msis /mnt/freenas
+msis@client1:/mnt/freenas$ ls
+ls: reading directory '.': Input/output error
+msis@client1:/mnt/freenas$ sudo mount -t nfs -o vers=4 172.16.221.128:/mnt/msis /mnt/freenas
+msis@client1:/mnt/freenas$ ls
+linux  Mac  webDev  windows
+msis@client1:/mnt/freenas$ cd linux
+msis@client1:/mnt/freenas/linux$ ls
+ls: reading directory '.': Input/output error
+msis@client1:/mnt/freenas/linux$ touch sample.txt
+touch: cannot touch 'sample.txt': Input/output error
+msis@client1:/mnt/freenas/linux$ sudo sample.txt
+sudo: sample.txt: command not found
+msis@client1:/mnt/freenas/linux$ sudo touch sample.txt
+touch: cannot touch 'sample.txt': Input/output error
+msis@client1:/mnt/freenas/linux$ echo "hello!!!" | sudo tee /mnt/freenas/linux/ssample.txt
+echo "hellosudo touch sample.txt!" | sudo tee /mnt/freenas/linux/ssample.txt
+tee: /mnt/freenas/linux/ssample.txt: Input/output error
+hellosudo touch sample.txt!
+msis@client1:/mnt/freenas/linux$ echo "hellosudo touch sample.txt!" | sudo tee /mnt/freenas/linux/sample.txt
+tee: /mnt/freenas/linux/sample.txt: Input/output error
+hellosudo touch sample.txt!
+msis@client1:/mnt/freenas/linux$ sudo touch sample.txt
+touch: cannot touch 'sample.txt': Input/output error
+msis@client1:/mnt/freenas/linux$ ls
+ls: reading directory '.': Input/output error
+msis@client1:/mnt/freenas/linux$ cd ..
+msis@client1:/mnt/freenas$ echo "hellosudo touch sample.txt!" | sudo tee /mnt/freenas/linux/sample.txt
+tee: /mnt/freenas/linux/sample.txt: Input/output error
+hellosudo touch sample.txt!
+msis@client1:/mnt/freenas$ ls
+linux  Mac  webDev  windows
+msis@client1:/mnt/freenas$ cd linux
+msis@client1:/mnt/freenas/linux$ ls
+ls: reading directory '.': Input/output error
+msis@client1:/mnt/freenas/linux$ touch sample.txt
+touch: cannot touch 'sample.txt': Input/output error
+msis@client1:/mnt/freenas/linux$ ls
+test
+msis@client1:/mnt/freenas/linux$ touch sample.txt
+msis@client1:/mnt/freenas/linux$ ls
+sample.txt  test
+msis@client1:/mnt/freenas/linux$ nano sample.txt
+msis@client1:/mnt/freenas/linux$ cat sample.txt 
+abcdefgh
+msis@client1:/mnt/freenas/linux$ 
+
