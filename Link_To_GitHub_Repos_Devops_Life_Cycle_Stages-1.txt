@@ -1,0 +1,174 @@
+1. Cafe Website Static HTML and CSS App: 
+
+https://github.com/sreepathysois/cafe-static-website.git
+
+Dokerfile
+FROM ubuntu:latest
+ARG DEBIAN_FRONTEND=noninteractive
+#RUN sed -i 's/http:\/\/archive.ubuntu.com\/ubuntu\//https:\/\/archive.ubuntu.com\/ubuntu\//g' /etc/apt/sources.list
+#RUN sed -i 's/http:\/\/archive.ubuntu.com\//http:\/\/us.archive.ubuntu.com\//g' /etc/apt/sources.list
+RUN apt-get update -y && apt-get install -y apache2
+ADD . /var/www/html/
+EXPOSE 80
+ENTRYPOINT apachectl -D FOREGROUND
+
+
+
+2. Static Websites templates Link
+https://html5up.net/
+https://freehtml5.co/
+
+3. Php Book alabum Static Website
+
+https://github.com/sreepathysois/basic-php-website-book-album.git
+
+
+Dockerfile
+FROM ubuntu:18.04
+ARG DEBIAN_FRONTEND=noninteractive
+#RUN sed -i 's/http:\/\/archive.ubuntu.com\/ubuntu\//https:\/\/archive.ubuntu.com\/ubuntu\//g' /etc/apt/sources.list
+RUN sed -i 's/http:\/\/archive.ubuntu.com\//http:\/\/us.archive.ubuntu.com\//g' /etc/apt/sources.list
+RUN apt-get update -y && apt-get install -y apache2
+RUN apt-get install -y php libapache2-mod-php
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+ADD . /var/www/html/
+EXPOSE 80
+ENTRYPOINT apachectl -D FOREGROUND
+
+
+
+4. Php Ecomemrce Dynamice Web App
+
+https://github.com/sreepathysois/phpmysql-app.git
+
+5. Cafe Dynamice Web application
+
+https://github.com/sreepathysois/Cafe_Dynamic_Website.git 
+
+6. JAVA JSP Web App
+https://github.com/sreepathysois/java-jsp-maven-webapp-ci-cd
+
+
+Pom.xml
+Dockerfile
+
+FROM sreedocker123/tomcat9maven:v1
+WORKDIR /app
+COPY . /app
+RUN mvn package
+RUN cp /app/target/*.war /usr/local/tomcat/webapps
+EXPOSE 8080
+
+Java-jsp-codereview
+Java-jsp-test
+Java-jsp-deploy
+
+Goals -P metrics pmd:pmd checkstyle:checkstyle findbugs:findbugs 
+
+
+7. Java Maven App Link - Jenkins
+
+https://github.com/sreepathysois/simple-java-maven-app.git 
+
+sudo apt-get install xlstproc
+
+cd target
+
+sudo xsltproc -o ./surefire-reports/index.html ../sample.xsl  ./surefire-reports/*.xml
+
+Compile
+Code review	
+Test
+Deploy
+
+
+8. Nodejs Monotoring App 
+
+https://github.com/sreepathysois/nodejs-monitoring-demoapp.git
+
+#master-slave 
+Barematal - make lint, make lint-fix, make test, make test-report
+Docjerdeploy - sudo docker rm -f node monitoring 
+              Sudo docker build . -f build/Dockerfile -t nodemonitoringapp:v1
+               Sudo docker run --name node monitoring -it -d -p 3005:3000 nodemonitoringapp:v1
+K8's - 
+
+
+9. Python Monitoring App 
+https://github.com/sreepathysois/python-demoapp-monitoring
+
+
+#master-slave 
+Barematal - sudo make lint, sudo make lint-fix, sudo make test, sudo make test-report
+Docjerdeploy - sudo docker rm -f pythonmonitoring 
+              Sudo docker build . -f build/Dockerfile -t pythonmonitoringapp:v1
+               Sudo docker run --name node monitoring -it -d -p 3005:3000 pythonmonitoringapp:v1
+K8's - 
+
+
+
+
+10. Nodejs Docker volume
+
+https://github.com/sreepathysois/docker-volumes-nodejs-app.git
+Dockerfile
+FROM node:14
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 80
+
+CMD [ "node", "server.js" ]
+
+
+
+
+11. Nodejs Jenkins App
+
+https://github.com/sreepathysois/node-jenkins-app-example.git
+
+Dockerfile
+FROM mhart/alpine-node
+
+EXPOSE 3000
+
+WORKDIR /app
+
+COPY . /app
+
+CMD ["node", "app.js"]
+
+
+Baremetal
+Docker-deploy
+Barematal - make lint, make lint-fix,  make test,  make test-report
+Docjerdeploy - sudo docker rm -f nodemonitoring 
+              Sudo docker build . -f build/Dockerfile -t nodemonitoringapp:v1
+               Sudo docker run --name node monitoring -it -d -p 3005:3000 nodemonitoringapp:v1
+K8's - 
+
+
+
+12. Maven JSP Web app
+
+https://github.com/sreepathysois/MyMavenApp.git
+
+
+
+
+13. Wordpress App - Docker-Compose File + Kubernetes Deployment and Service Files 
+
+https://github.com/sreepathysois/Wordpress_Docker_Kubernetes.git 
+
+14. Ansible Playbook + Slave/Nodes Setup Procudure for Windows + Ubuntu Nodes
+
+https://github.com/sreepathysois/AnsibleWorkUpdated.git   
+
+
+
