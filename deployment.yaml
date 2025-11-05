@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cafestatic
+  labels:
+    app: cafestatic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cafestatic
+  template:
+    metadata:
+      labels:
+        app: cafestatic
+    spec:
+      containers:
+      - name: cafestatic
+        image: sreedocker123/cafewebimage:final
+        ports:
+        - containerPort: 80
