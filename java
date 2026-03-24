@@ -1,5 +1,5 @@
 https://chatgpt.com/share/69c1f279-4754-8006-a903-d5c057b6d293 
-
+https://chatgpt.com/share/69b8d296-50f4-8000-b4fb-653c5fd292c6
 
 STEP 1: Create MySQL Database + Tables
 
