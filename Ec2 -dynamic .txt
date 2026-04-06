@@ -1,3 +1,12 @@
+
+https://chatgpt.com/share/69d313dd-47e0-83e8-9a09-335a3d0ff0c6
+
+
+
+
+
+
+
 msis@msis:~/Downloads$ sudo ssh -i labsuser.pem ubuntu@34.229.150.155
 Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-1029-aws x86_64)
 
