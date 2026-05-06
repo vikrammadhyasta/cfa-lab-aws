@@ -1,7 +1,0 @@
-10:01	404	PageNotFound	192.168.1.1
-10:02	500	ServerError	192.168.1.2
-10:03	404	PageNotFound	192.168.1.3
-10:04	403	Forbidden	192.168.1.4
-10:05	500	ServerError	192.168.1.5
-10:06	404	PageNotFound	192.168.1.6
-10:07	403	Forbidden	192.168.1.7
