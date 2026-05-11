@@ -1,0 +1,51 @@
+Task 2 – Enable VPC Flow Logs 
+1. Create S3 bucket: 
+aws s3api create-bucket --bucket flowlog1234 --region <region> 
+2. Get VPC1 ID: 
+aws ec2 describe-vpcs --filters "Name=tag:Name,Values=VPC1" 
+3. Enable Flow Logs: 
+aws ec2 create-flow-logs --resource-type VPC --resource-ids <vpc-id> --traffic-type ALL --log
+destination-type s3 --log-destination arn:aws:s3:::flowlog1234 
+4. Verify: 
+aws ec2 describe-flow-logs
+
+Task 3 – Troubleshooting #1 (Website Not Loading) 
+1. Check instance status: 
+aws ec2 describe-instances --filter "Name=ip-address,Values=<WebServerIP>" 
+2. Check open ports: 
+sudo yum install -y nmap 
+3. nmap <WebServerIP> 
+4. Check Security Group: 
+aws ec2 describe-security-groups --group-ids <sg-id>
+5. Check Route Table: 
+aws ec2 describe-route-tables --filter "Name=association.subnet-id,Values=<subnet-id>" 
+6. If no route to Internet Gateway → create route: 
+aws ec2 create-route --route-table-id <rtb-id> --destination-cidr-block 0.0.0.0/0 --gateway-id 
+<igw-id> 
+7. Refresh browser → Website works.
+
+Task 3 – Troubleshooting #2 (SSH Not Working) 
+1. Check NACL: 
+aws ec2 describe-network-acls --filter "Name=association.subnet-id,Values=<subnet-id>" 
+2. Look for DENY rule on port 22 
+3. Delete incorrect NACL entry: 
+aws ec2 delete-network-acl-entry --network-acl-id <acl-id> --rule-number <rule-number> -
+egress 
+4. Try SSH again → Should work.
+
+Task 4 – Download & Analyze Flow Logs 
+1. Create local folder: 
+mkdir flowlogs 
+2. cd flowlogs 
+3. Download logs: 
+aws s3 cp s3://flowlog1234/ . --recursive 
+4. Extract: 
+gunzip *.gz 
+5. Check rejected traffic: 
+grep -rn REJECT . 
+6. Check SSH rejects: 
+grep -rn ' 22 ' . | grep REJECT 
+7. Count entries: 
+grep -rn REJECT . | wc -l 
+8. Convert timestamp: 
+date -d @<timestamp>
