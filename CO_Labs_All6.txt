@@ -1,0 +1,140 @@
+Lab 1 - Module 2: S3 Static Website
+
+- Download pem key, change permissions
+- SSH into CLI host: ssh -i labsuser.pem ec2-user@<public-ip>
+- Configure AWS CLI: aws configure
+- Verify no buckets exist: aws s3 ls
+- Create S3 bucket with region: aws s3 mb s3://<bucket-name> --region <region>
+- Check IAM user with S3 full access, login as that user in console
+- cd into sysops-activity-files, extract gunzip files, delete gunzip folder: cd sysops-activity-files then gunzip <file>.gz
+- Edit ownership controls and ACL for bucket: aws s3api put-bucket-ownership-controls --bucket <bucket> --ownership-controls Rules=[{ObjectOwnership=BucketOwnerEnforced}]
+- Configure static website hosting, set index.html: aws s3 website s3://<bucket> --index-document index.html
+- Upload files to bucket: aws s3 cp . s3://<bucket> --recursive
+- Open console, get S3 endpoint URL, test in browser
+- Create batch file for repeatable updates
+- Update index.html, run batch file, verify changes in browser
+- Replace cp with sync in batch file for efficiency: aws s3 sync . s3://<bucket>
+
+
+Lab 2 - Module 3: Troubleshoot EC2 LAMP
+
+- Download pem key, change permissions
+- SSH into CLI host: ssh -i labsuser.pem ec2-user@<public-ip>
+- Configure AWS CLI: aws configure
+- Find and explore shell script: cd sysops-activity-files/starters then cat create-lamp-instance.sh
+- Run shell script, it fails: bash create-lamp-instance.sh
+- Fix 1: change default region eu-west-1 to us-east-1
+- Fix 2: change region in instance create command to us-east-1
+- Fix 3: change AZ eu-west-1a to us-east-1a in subnet command
+- Re-run script, delete existing SG when prompted, success: bash create-lamp-instance.sh
+- Check if website loads, use nmap to check open ports: nmap <public-ip>
+- Port 80 not open, go to SG in console, add inbound rule for port 80
+- Website loads in browser
+- SSH into LAMP server, check log file
+- Access cafe web app at /mompopcafe path
+
+
+Lab 3 - Module 7: Troubleshoot VPC
+
+- SSH into CLI host: ssh -i labsuser.pem ec2-user@<public-ip>
+- Configure AWS CLI: aws configure
+- Create S3 bucket for flow logs: aws s3 mb s3://<flowlog-bucket>
+- Get VPC1 ID: aws ec2 describe-vpcs --filters "Name=tag:Name,Values=VPC1"
+- Enable VPC Flow Logs on VPC1: aws ec2 create-flow-logs --resource-type VPC --resource-ids <vpc-id> --traffic-type ALL --log-destination-type s3 --log-destination arn:aws:s3:::<flowlog-bucket>
+- Confirm flow log created: aws ec2 describe-flow-logs
+- Get web server instance details: aws ec2 describe-instances --query "Reservations[*].Instances[*].[State.Name,PrivateIpAddress,InstanceId,SecurityGroups,SubnetId,KeyName]"
+- Try SSH to web server, get timeout
+- Check open ports: nmap <web-server-ip>
+- Check security group details: aws ec2 describe-security-groups --group-ids <sg-id>
+- Check route table, no IGW route found: aws ec2 describe-route-tables
+- Get internet gateway ID: aws ec2 describe-internet-gateways
+- Create route to IGW, website now loads: aws ec2 create-route --route-table-id <rt-id> --destination-cidr-block 0.0.0.0/0 --gateway-id <igw-id>
+- Try SSH again, still fails, check NACL in console, port 22 DENIED
+- Delete NACL deny rule for port 22 in console, SSH works now
+- Download and analyse flow logs: mkdir flowlogs then cd flowlogs
+- List buckets to get name: aws s3 ls
+- Download flow logs: aws s3 cp s3://<flowlog####>/ . --recursive
+- Extract logs: gunzip *.gz
+- See all rejected traffic: grep -rn REJECT .
+- Count rejected records: grep -rn REJECT . | wc -l
+- Find blocked SSH attempts: grep -rn ' 22 ' . | grep REJECT
+- Filter by your IP: grep -rn ' 22 ' . | grep REJECT | grep <ip-address>
+
+
+Lab 4 - Module 9: CloudWatch Monitoring
+
+- Systems Manager, Run Command, select AWS-ConfigureAWSPackage radio button
+- Fill action, name, version fields, select web server instance manually, click run
+- Select instance ID in targets and output section
+- Parameter Store, click create parameter, enter Name, Description, Value, save
+- Run Command, search document name prefix: AmazonCloudWatch-ManageAgent
+- Set command parameters: Action=configure, Mode=ec2, Optional Configuration Source=ssm, Optional Configuration Location=Monitor-Web-Server, Optional Restart=yes
+- Select web server instance manually, click run
+- Open web server URL in browser, test page loads
+- Append /start to URL, get 404 error
+- CloudWatch Logs, find HttpAccessLog and HttpErrorLog log groups
+- Open HttpAccessLog, open log stream, see GET requests from browser
+- Select HttpAccessLog, Actions, Create Metrics Filter
+- Enter filter pattern: [ip, id, user, timestamp, request, status_code=404, size]
+- Test pattern on instance ID, press next, fill filter name, namespace, metric name, metric value, create
+- In 404Errors panel, check the checkbox, choose create alarm
+- Set period, condition, create new SNS notification topic, set alarm name, create
+- Go to alarms section, shows insufficient data
+- Refresh webpage multiple times, alarm moves to IN ALARM state
+- EC2, select web server, monitor tab, check performance metrics
+- CloudWatch, all metrics, CWAgent, device/fstype/host/path, explore metrics
+- EventBridge, create a rule for EC2 state change linked to SNS topic
+- SNS, check topic, stop EC2 instance, notification fires
+- AWS Config, create two managed rules: ec2-volume-inuse-check and required-tags
+
+
+Lab 5 - Module 9: CloudTrail Hacker
+
+- Add inbound rule port 22 to web server SG from your IP in console
+- Create CloudTrail trail in console, logs stored in S3 bucket monitoring####
+- Observe website hacked, image changed, extra SSH rule added to SG
+- SSH into web server: ssh -i labsuser.pem ec2-user@<web-server-ip>
+- Create directory and download CloudTrail logs: mkdir ctraillogs then cd ctraillogs
+- List buckets: aws s3 ls
+- Download logs: aws s3 cp s3://<monitoring####>/ . --recursive
+- Extract logs: gunzip *.gz
+- Read log in readable format: cat <filename.json> | python -m json.tool
+- Set web server IP as variable: ip=<WebServerIP>
+- Filter logs by source IP: for i in $(ls); do echo $i && cat $i | python -m json.tool | grep sourceIPAddress; done
+- Filter logs by event name: for i in $(ls); do echo $i && cat $i | python -m json.tool | grep eventName; done
+- Athena, create table from monitoring#### S3 bucket
+- Set query results location to s3://monitoring####/results/ and save
+- Run SQL query to find hacker username, time, IP, method used
+- Check who has logged into the OS: sudo aureport --auth
+- Check who is currently logged in: who
+- chaos-user still logged in, try to delete: sudo userdel -r chaos-user
+- Get process number from output, kill the process: sudo kill -9 <ProcNum>
+- Verify gone: who
+- Delete chaos-user again, now succeeds: sudo userdel -r chaos-user
+- Check for other suspicious users: sudo cat /etc/passwd | grep -v nologin
+- Check sshd_config last modified timestamp: sudo ls -l /etc/ssh/sshd_config
+- Edit sshd_config, comment out password authentication: sudo vi /etc/ssh/sshd_config
+- Restart SSH service: sudo systemctl restart sshd
+- Delete unauthorized SG inbound rule in console
+- Restore original image on website
+- Delete hacker IAM login profile and IAM user in console
+
+
+Lab 6 - Module 8: Working with S3
+
+- SSH into CLI host: ssh -i labsuser.pem ec2-user@<public-ip>
+- Configure AWS CLI: aws configure
+- Create S3 bucket in us-east-1: aws s3 mb s3://<bucket-name> --region us-east-1
+- Upload sample images to /images path: aws s3 cp <images-folder> s3://<bucket>/images/ --recursive
+- List bucket contents: aws s3 ls s3://<bucket>
+- IAM console, find mediacouser, go to security credentials tab, create access key, download CSV, copy account number
+- Open incognito tab, login as mediacouser using console link, observe limited S3 permissions
+- SNS, create Standard topic, edit topic policy, save
+- Create subscription, protocol Email, enter email, save, go to inbox and accept subscription
+- Create S3 bucket policy JSON file, apply via CLI, receive email confirmation: aws s3api put-bucket-policy --bucket <bucket> --policy file://policy.json
+- Update S3 event notification via CLI, receive SNS email: aws s3api put-bucket-notification-configuration --bucket <bucket> --notification-configuration file://notification.json
+- Switch to mediacouser credentials: aws configure
+- PUT object into bucket, receive SNS email: aws s3api put-object --bucket <bucket> --key <filename> --body <file>
+- GET object from bucket: aws s3api get-object --bucket <bucket> --key <filename> <output-file>
+- DELETE object from bucket: aws s3api delete-object --bucket <bucket> --key <filename>
+- Try changing bucket permissions, access denied as expected: aws s3api put-bucket-acl --bucket <bucket> --acl public-read
